@@ -76,7 +76,7 @@ bool X_O_Board::game_is_over(Player<char>* player) {
 
 //--------------------------------------- XO_UI Implementation
 
-XO_UI::XO_UI() : UI<char>("", 3) { }
+XO_UI::XO_UI() : UI<char>("", 3) {}
 
 Player<char>* XO_UI::create_player(string& name, char symbol, PlayerType type) {
     // Create player based on type

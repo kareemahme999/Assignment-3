@@ -33,7 +33,7 @@ public:
     bool is_win(Player<int>* player);//check winer
     bool is_lose(Player<int>*) { return false; };//check loser
     bool is_draw(Player<int>* player);//painting
-    bool game_is_over(Player<int>* player); // stop gaming
+    bool game_is_over(Player<int>* player);// stop gaming
 };
 
 

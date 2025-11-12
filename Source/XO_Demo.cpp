@@ -93,7 +93,7 @@ void menu() {
 void xo_game() {
     cout << "\n===============================\n";
     cout << "  Starting Classic X-O Game  \n";
-    cout << "===============================\n";
+    cout << "===============================\n" ;
 
     // Create an instance of the specific UI for X-O using a pointer 
     UI<char>* game_ui = new XO_UI();

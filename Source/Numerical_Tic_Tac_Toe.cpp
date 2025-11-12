@@ -40,7 +40,7 @@ bool Numerical_Board::update_board(Move<int>* move) {
 }
 
 // chack if the sum of the three numbers is equal to 15 or no
-bool check_win(int x , int y  , int number_Place) {
+bool check_win(int x , int y , int number_Place) {
     return (x != 0 && y != 0 && number_Place != 0) && ((x + y + number_Place) == 15);
 }
 bool Numerical_Board::is_win(Player<int>* player) {
