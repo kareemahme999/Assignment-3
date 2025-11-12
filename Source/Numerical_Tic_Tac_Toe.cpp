@@ -1,9 +1,13 @@
-//
-// Created by Kareem Ahmed on 11/12/2025.
-//
 #include <bits/stdc++.h>
 #include "Numerical_Tic_Tac_Toe.h"
 
+/*──────▄▌▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+ * ───▄▄██▌█ beep beep--------------
+ * ▄▄▄▌▐██▌█ -KAREEM_AHMED------------
+ * ███████▌█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+ * ▀(@)▀▀▀▀(@)(@)▀▀▀▀▀▀▀▀▀▀▀(@)▀-----------------------
+ *
+*/
 using namespace std;
 
 // draw the board
@@ -167,7 +171,10 @@ Move<int>* Numerical_UI::get_move(Player<int>* player) {
 
         // 2. Get coordinates
         cout << "Enter coordinates (x y) to place " << chosen_num << " (0 to 2): ";
-        cin >> x >> y;
+        cout<<"\n Enter x  : ";
+        cin >> x;
+        cout<<"\n Enter y  : ";
+        cin>> y;
 
     }
 

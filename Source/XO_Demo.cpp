@@ -8,6 +8,52 @@
 #include "Numerical_Tic_Tac_Toe.h"
 using namespace std;
 
+/*──────▄▌▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+ * ───▄▄██▌█ beep beep--------------
+ * ▄▄▄▌▐██▌█ -KAREEM_AHMED------------
+ * ███████▌█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+ * ▀(@)▀▀▀▀(@)(@)▀▀▀▀▀▀▀▀▀▀▀(@)▀-----------------------
+ *
+*/
+/*
+*******# Name of Team Member:  #*******
+
+Name:Kareem Ahmed>>>>ID:20240417:
+>>Task_1:
+>>Task_2:
+
+Name:Arwa Amin>>>>ID:20242032:
+>>Task_3:
+>>Task_4:
+
+Name:Mohamed Mortada>>>>ID:20242303
+>>Task_5:
+>>Task_6:
+
+Name:Maryam Sayed>>>>ID:20242327:
+>>Task_7:
+>>Task_8:
+
+###ALL Task of Group:###
+>>Task_9:
+>>Task_10:
+>>Task_11:
+>>Task_12:
+
+###Bonus Task of Group:###
+>>Task_13:
+*/
+
+
+
+
+
+
+
+
+
+
+
 
 
 void clear_cin() {
@@ -37,9 +83,9 @@ void menu() {
     cout << "11: Play Infinity Tic-Tac-Toe\n";//Next update
     cout << "12: Play Ultimate Tic Tac Toe\n";//Next update
     cout << "-------------------------------------------\n";
-    cout <<"Bones Games:\n";
+    cout <<"Bonus Games:\n";
     cout <<"13: Play Memory Tic-Tac-Toe\n";//Next update
-    cout << "14: Exit\n";
+    cout <<"14: Exit\n";
     cout << "-------------------------------------------\n";
     cout <<"please enter your choice from the menu(0>>>>14):";
 }

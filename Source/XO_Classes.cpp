@@ -1,10 +1,16 @@
-//--------------------------------------- IMPLEMENTATION
 
 #include <iostream>
 #include <iomanip>
 #include <cctype>  // for toupper()
 #include "XO_Classes.h"
 
+/*──────▄▌▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+ * ───▄▄██▌█ beep beep--------------
+ * ▄▄▄▌▐██▌█ -KAREEM_AHMED------------
+ * ███████▌█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+ * ▀(@)▀▀▀▀(@)(@)▀▀▀▀▀▀▀▀▀▀▀(@)▀-----------------------
+ *
+*/
 using namespace std;
 
 //--------------------------------------- X_O_Board Implementation
@@ -19,7 +25,7 @@ X_O_Board::X_O_Board() : Board(3, 3) {
 bool X_O_Board::update_board(Move<char>* move) {
     int x = move->get_x();
     int y = move->get_y();
-    char mark = move->get_symbol();
+    char mark = move->get_symbol();//x,o
 
     // Validate move and apply if valid
     if (!(x < 0 || x >= rows || y < 0 || y >= columns) &&
