@@ -3,13 +3,13 @@ project(Assignment_3)
 
 set(CMAKE_CXX_STANDARD 14)
 
-include_directories(Source)
+include_directories(CS213_A3_S27_20240417_20242032_20242303_20242327)
 
 add_executable(Assignment_3
-        Source/BoardGame_Classes.h
-        Source/XO_Classes.cpp
-        Source/XO_Classes.h
-        Source/XO_Demo.cpp
-        Source/Numerical_Tic_Tac_Toe.cpp
-        Source/Numerical_Tic_Tac_Toe.cpp
+        CS213_A3_S27_20240417_20242032_20242303_20242327/BoardGame_Classes.h
+        CS213_A3_S27_20240417_20242032_20242303_20242327/XO_Classes.cpp
+        CS213_A3_S27_20240417_20242032_20242303_20242327/XO_Classes.h
+        CS213_A3_S27_20240417_20242032_20242303_20242327/XO_Demo.cpp
+        CS213_A3_S27_20240417_20242032_20242303_20242327/Numerical_Tic_Tac_Toe.cpp
+        CS213_A3_S27_20240417_20242032_20242303_20242327/Numerical_Tic_Tac_Toe.cpp
 )
