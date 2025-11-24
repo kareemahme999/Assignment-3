@@ -9,6 +9,7 @@
 #include "Numerical_Tic_Tac_Toe.h"
 #include "FiveXO.h"
 #include "FourXO.h"
+#include "Obstacles.h"
 using namespace std;
 
 /*──────▄▌▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
@@ -254,6 +255,28 @@ void run_4x4_game() {
     cout << "\n--- 4x4 Game Over ---\n";
 }
 
+void run_obstacles_game() {
+    cout << "\n=====================================\n";
+    cout << "     Starting Obstacles Tic Tac Toe (6x6)\n";
+    cout << "   Goal: Get 4 in a row while obstacles appear!\n";
+    cout << "=====================================\n";
+
+    UI<char>* game_ui = new Obstacles_UI();
+    Board<char>* board = new ObstaclesBoard();
+    Player<char>** players = game_ui->setup_players();
+
+    GameManager<char> game(board, players, game_ui);
+    game.run();
+
+    // cleanup
+    for (int i = 0; i < 2; i++) delete players[i];
+    delete[] players;
+    delete board;
+    delete game_ui;
+
+    cout << "\n--- Obstacles Tic Tac Toe Game Over ---\n";
+}
+
 // ====================================================================
 int main() {
     srand(static_cast<unsigned int>(time(0)));  // Seed the random number generator
@@ -340,9 +363,7 @@ while (run_games) {
             /******************/
 
         case 10: {
-
-
-
+            run_obstacles_game();
             break;
         }
             /******************/
