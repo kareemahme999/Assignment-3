@@ -210,6 +210,20 @@ void run_sus_game() {
     cout << "\n--- SUS Game Over ---\n";
 }
 
+void run_5x5_tic_tac_toe() {
+    cout << "\n=== Starting 5x5 Tic Tac Toe (4 in a row) ===\n";
+    UI<char>* game_ui = new XO_UI();
+    Board<char>* five_board = new FiveXOBoard();
+    Player<char>** players = game_ui->setup_players();
+    GameManager<char> game(five_board, players, game_ui);
+    game.run();
+    delete five_board;
+    delete game_ui;
+    for (int i = 0; i < 2; i++) delete players[i];
+    delete[] players;
+    cout << "\n--- Game Over ---\n";
+}
+
 // ====================================================================
 int main() {
     srand(static_cast<unsigned int>(time(0)));  // Seed the random number generator
@@ -247,9 +261,7 @@ while (run_games) {
             /******************/
 
         case 3: {
-
-
-
+            run_5x5_tic_tac_toe();
             break;
         }
             /******************/
