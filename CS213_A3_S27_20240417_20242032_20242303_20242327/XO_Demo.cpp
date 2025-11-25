@@ -9,6 +9,7 @@
 #include "Numerical_Tic_Tac_Toe.h"
 #include "FiveXO.h"
 #include "FourXO.h"
+#include "Four_in_a_row.h"
 #include "Obstacles.h"
 using namespace std;
 
@@ -213,6 +214,34 @@ void run_sus_game() {
     cout << "\n--- SUS Game Over ---\n";
 }
 
+void run_four_in_a_row_game() {
+    cout << "\n=====================================\n";
+    cout << "  Starting Four-in-a-row Game (6x7) \n";
+    cout << "=====================================\n";
+
+    UI<char>* game_ui = new FourInARow_UI();
+
+    Board<char>* fir_board = new FourInARow_Board(); // FIR = Four In a Row
+
+    Player<char>** players = game_ui->setup_players();
+
+    GameManager<char> fir_game(fir_board, players, game_ui);
+
+    fir_game.run();
+
+
+    delete fir_board;
+    delete game_ui;
+
+    for (int i = 0; i < 2; ++i) {
+        delete players[i];
+    }
+    delete[] players;
+
+    cout << "\n--- Four-in-a-row Game Over ---\n";
+}
+
+
 void run_5x5_tic_tac_toe() {
     cout << "\n=== Starting 5x5 Tic Tac Toe (4 in a row) ===\n";
     UI<char>* game_ui = new XO_UI();
@@ -306,9 +335,7 @@ while (run_games) {
             /******************/
 
         case 2: {
-
-
-
+            run_four_in_a_row_game();
             break;
         }
             /******************/

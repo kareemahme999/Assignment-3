@@ -283,11 +283,11 @@ public:
                 ui->display_board_matrix(boardPtr->get_board_matrix());
 
                 if (boardPtr->is_win(currentPlayer)) {
-                    ui->display_message(currentPlayer->get_name() + " wins!");
+                    ui->display_message(" Congratulation "+currentPlayer->get_name() + " wins!");
                     return;
                 }
                 if (boardPtr->is_lose(currentPlayer)) {
-                    ui->display_message(players[1 - i]->get_name() + " wins!");
+                    ui->display_message(" Congratulation "+players[1 - i]->get_name() + " wins!");
                     return;
                 }
                 if (boardPtr->is_draw(currentPlayer)) {
