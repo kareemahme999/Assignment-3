@@ -9,6 +9,7 @@
 #include "Numerical_Tic_Tac_Toe.h"
 #include "FiveXO.h"
 #include "FourXO.h"
+#include "Misere_Tic_Tac_Teo.h"
 #include "Four_in_a_row.h"
 #include "Obstacles.h"
 using namespace std;
@@ -77,7 +78,7 @@ void menu() {
     cout << "2: Play Four-in-a-row\n";
     cout << "3: 5 x 5 Tic Tac Toe\n";//Next update
     cout << "4: Play Word Tic-tac-toe\n";//Next update
-    cout << "5: Play Misère Tic Tac Toe\n";//Next update
+    cout << "5: Play Misère Tic Tac Toe\n";
     cout << "6: Play Diamond Tic-Tac-Toe\n";//Next update
     cout << "7: Play 4 x 4 Tic-Tac-Toe\n";//Next update
     cout << "8: Play Pyramid Tic-Tac-Toe\n";//Next update
@@ -100,7 +101,7 @@ void xo_game() {
     cout << "  Starting Classic X-O Game  \n";
     cout << "===============================\n" ;
 
-    // Create an instance of the specific UI for X-O using a pointer 
+    // Create an instance of the specific UI for X-O using a pointer
     UI<char>* game_ui = new XO_UI();
 
     // Create the game board. For X-O, this is an X_O_Board.
@@ -240,8 +241,39 @@ void run_four_in_a_row_game() {
 
     cout << "\n--- Four-in-a-row Game Over ---\n";
 }
+//misereXO
+void misere_game() {
+    cout << "\n===============================\n";
+    cout << "   Starting Misère Tic Tac Toe\n";
+    cout << "===============================\n";
 
+    // Create UI for Misère Tic Tac Toe
+    UI<char>* game_ui = new MiserUI();
 
+    // Create Misère board
+    Board<char>* misere_board = new MiserBoard();
+
+    // Setup players
+    Player<char>** players = game_ui->setup_players();
+
+    // Create game manager
+    GameManager<char> misere_game(misere_board, players, game_ui);
+
+    // Run the game
+    misere_game.run();
+
+    // --- Cleanup ---
+    delete misere_board;
+    delete game_ui;
+
+    for (int i = 0; i < 2; ++i) {
+        delete players[i];
+    }
+    delete[] players;
+
+    cout << "\n--- Misère Tic Tac Toe Game Over ---\n";
+}
+//fiveXO
 void run_5x5_tic_tac_toe() {
     cout << "\n=== Starting 5x5 Tic Tac Toe (4 in a row) ===\n";
     UI<char>* game_ui = new XO_UI();
@@ -362,9 +394,7 @@ while (run_games) {
             /******************/
 
         case 5: {
-
-
-
+            misere_game();
             break;
         }
             /******************/

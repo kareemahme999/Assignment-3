@@ -1,16 +1,39 @@
-//
-// Created by Mohamed Al Khateeb on 25-Nov-25.
-//
-
 #ifndef MISERE_TIC_TAC_TEO_H
 #define MISERE_TIC_TAC_TEO_H
+#include "BoardGame_Classes.h"
+using namespace std;
+
+class MiserBoard : public Board<char> {
+private:
+    char blank_symbol = '.'; ///< Character used to represent an empty cell on the board.
+
+public:
+
+    MiserBoard();
 
 
+    bool update_board(Move<char>* move);
 
-class Misere_Tic_Tac_Teo {
+    bool is_win(Player<char>* player);
 
+    bool is_lose(Player<char>*player);
+
+    bool is_draw(Player<char>* player);
+
+
+    bool game_is_over(Player<char>* player);
 };
 
+class MiserUI : public UI<char> {
+public:
 
+    MiserUI();
 
-#endif //MISERE_TIC_TAC_TEO_H
+    ~MiserUI() {};
+
+    Player<char>* create_player(string& name, char symbol, PlayerType type);
+
+    virtual Move<char>* get_move(Player<char>* player);
+};
+
+#endif
