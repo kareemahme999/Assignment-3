@@ -12,6 +12,7 @@
 #include "Four_in_a_row.h"
 #include "Obstacles.h"
 #include "Pyramid_Board.h"
+#include "Infinity_Board.h"
 
 using namespace std;
 
@@ -335,6 +336,27 @@ void run_obstacles_game() {
     cout << "\n--- Obstacles Tic Tac Toe Game Over ---\n";
 }
 
+
+void play_infinity_game() {
+    cout << "\n🎮 Starting Infinity Tic-Tac-Toe...\n";
+    cout << "💡 Remember: Oldest moves disappear every 3 turns!\n\n";
+
+    Infinity_Board* board = new Infinity_Board();
+    Infinity_UI* ui = new Infinity_UI();
+    Player<char>** players = ui->setup_players();
+
+    GameManager<char> gameManager(board, players, ui);
+    gameManager.run();
+
+    delete board;
+    delete ui;
+    delete players[0];
+    delete players[1];
+    delete[] players;
+
+    cout << "Infinity game finished.\n\n";
+}
+
 // ====================================================================
 int main() {
     srand(static_cast<unsigned int>(time(0)));  // Seed the random number generator
@@ -423,9 +445,7 @@ while (run_games) {
             /******************/
 
         case 11: {
-
-
-
+            play_infinity_game();
             break;
         }
             /******************/
