@@ -17,4 +17,6 @@ add_executable(Assignment_3
         ${SRC_DIR}/Obstacles.cpp
         ${SRC_DIR}/Misere_Tic_Tac_Teo.cpp
         ${SRC_DIR}/Four_in_a_row.cpp
+        ${SRC_DIR}/Pyramid_Board.cpp
+
 )

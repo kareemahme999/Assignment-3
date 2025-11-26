@@ -11,6 +11,8 @@
 #include "FourXO.h"
 #include "Four_in_a_row.h"
 #include "Obstacles.h"
+#include "Pyramid_Board.h"
+
 using namespace std;
 
 /*──────▄▌▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
@@ -291,6 +293,26 @@ void run_4x4_game() {
     cout << "\n--- 4x4 Moving Game Over ---\n";
 }
 
+void play_pyramid_game() {
+    cout << "\nStarting Pyramid Tic-Tac-Toe...\n";
+
+    Pyramid_Board* board = new Pyramid_Board();
+    Pyramid_UI* ui = new Pyramid_UI();
+    Player<char>** players = ui->setup_players();
+
+    GameManager<char> gameManager(board, players, ui);
+    gameManager.run();
+
+    delete board;
+    delete ui;
+    delete players[0];
+    delete players[1];
+    delete[] players;
+
+    cout << "Game finished.\n\n";
+}
+
+
 void run_obstacles_game() {
     cout << "\n=====================================\n";
     cout << "     Starting Obstacles Tic Tac Toe (6x6)\n";
@@ -383,9 +405,7 @@ while (run_games) {
             /******************/
 
         case 8: {
-
-
-
+            play_pyramid_game();
             break;
         }
             /*******Group Games***********/
@@ -434,8 +454,6 @@ while (run_games) {
         }
     }
 }
-
-
 
 
 
